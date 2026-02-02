@@ -24,6 +24,61 @@
         .radio-group { display: inline-block; }
         
         button { margin-top: 15px; padding: 5px 15px; }
+        select {
+        padding: 8px 12px;
+        border-radius: 8px; /* Tạo độ bo góc */
+        border: 1px solid #ccc;
+        background-color: #fff;
+        min-width: 150px;
+        cursor: pointer;
+        outline: none;
+        /* Appearance giúp đồng bộ hiển thị trên các trình duyệt khác nhau */
+        appearance: none; 
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        
+        /* Thêm icon mũi tên hai chiều thủ công nếu muốn giống hệt ảnh */
+        background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        padding-right: 30px;
+        }
+        .ssn-row {
+  display: flex;          /* Ép các thành phần nằm cùng một hàng */
+  align-items: center;    /* Căn giữa theo chiều dọc */
+  gap: 8px;               /* Khoảng cách nhỏ giữa chữ và ô nhập */
+  font-family: Arial, sans-serif;
+}
+
+.ssn-row label {
+  font-size: 11px;        /* Chữ nhỏ hơn theo yêu cầu */
+  font-weight: bold;
+  white-space: nowrap;    /* Giữ chữ luôn trên 1 dòng, không xuống hàng */
+  color: #333;
+}
+
+.input-container {
+  position: relative;     /* Để đặt icon khóa vào bên trong ô input */
+  display: flex;
+  align-items: center;
+}
+
+.ssn-input {
+  width: 250px;           /* Độ dài ô input */
+  height: 22px;           /* Chiều cao nhỏ gọn */
+  font-size: 11px;        /* Chữ trong ô cũng nhỏ lại */
+  padding-right: 25px;    /* Chừa chỗ cho icon bên phải */
+  border: 1px solid #999;
+  border-radius: 2px;     /* Bo góc nhẹ như trong hình */
+}
+
+.icon-lock {
+  position: absolute;
+  right: 5px;             /* Đẩy icon vào mép phải bên trong ô */
+  font-size: 10px;        /* Icon nhỏ xinh */
+  color: #666;
+  user-select: none;
+}
     </style>
 </head>
 <body>
@@ -53,7 +108,14 @@
     <input type="datetime" id="BirthDate" value="1969-07-02 00:00:00"><br>
     <label for="HireDate">HireDate</label>
     <input type="datetime" id="HireDate" value="1994-11-15 00:00:00"><br>
-    <label >Report to</label>
+    <div class="ssn-row">
+    <label for="ssn-field">SSN # (if applicable)</label>
+    <div class="input-container">
+    <input type="text" id="ssn-field" class="ssn-input">
+    <span class="icon-lock">🔒</span>
+    </div>
+    </div>
+    <label for="Reportto">Reports to</label>
     <select name="Reportto">
         <option>Buchana</option>
     </select>
@@ -64,6 +126,23 @@
     <label for="addr">Address</label>
     <input type="text" id="addr" value="7 Houndstooth Rd."><br>
 
+    <label for="City">City</label>
+    <input type="text" id="City" value="London"><br>
+
+    <label for="Region">Region</label>
+    <input type="text" id="Region"><br>
+
+    <label for="Posttal">Postal Code</label>
+    <input type="text" id="Postal" value="WG2 7LT"><br>
+
+    <label for="Country">Country</label>
+    <select>
+        <option value="Russian Federation">Russian Federation</option>
+    </select>
+    <label for="Phone">US Home Phone</label>
+    <input type="tel" value="(234)234-2342"> <br>
+    <label for="Photo">Photo</label>
+    <input type="file" value="EmpID9.bmp"><br>
     <h3>Optional Info</h3>
     <label>Notes</label>
     <textarea rows="4">Anne has a BA degree in English from St. Lawrence College...</textarea><br>
