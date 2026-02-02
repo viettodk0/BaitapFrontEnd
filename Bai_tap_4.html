@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Form Minimal</title>
+    <style>
+        body { font-family: sans-serif; font-size: 14px; max-width: 500px; margin: auto; }
+        h3 { border-bottom: 1px solid #ccc; margin-top: 20px; }
+        
+        /* Căn chỉnh nhãn và ô nhập liệu */
+        label { 
+            display: inline-block; 
+            width: 130px; 
+            font-weight: bold; 
+            margin-bottom: 10px;
+            vertical-align: top;
+        }
+        
+        input[type="datetime"],input[type="text"], select, textarea { 
+            width: 300px; 
+            margin-bottom: 10px; 
+        }
+
+        .radio-group { display: inline-block; }
+        
+        button { margin-top: 15px; padding: 5px 15px; }
+    </style>
+</head>
+<body>
+
+<form>
+    <h3>Basic Info</h3>
+    <label>Employee ID</label> 9 <br>
+    
+    <label>Last Name</label> Dodsworth <br>
+    
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" value="Anne"><br>
+    
+    <label>Gender</label>
+    <div class="radio-group">
+        <input type="radio" name="g"> Male<br>
+        <input type="radio" name="g"> Female<br>
+        <input type="radio" name="g"> XXX<br>
+        <input type="radio" name="g" checked> ZZZ
+    </div><br>
+
+    <label bel for="title">Title</label>
+    <input type="text" id="title" value="Sales Representative"><br>
+    <label for="Suffix">Suffix</label>
+    <input type="text" id="Suffix" value="Ms."><br>
+    <label for="BirthDate">BirthDate</label>
+    <input type="datetime" id="BirthDate" value="1969-07-02 00:00:00"><br>
+    <label for="HireDate">HireDate</label>
+    <input type="datetime" id="HireDate" value="1994-11-15 00:00:00"><br>
+    <label >Report to</label>
+    <select name="Reportto">
+        <option>Buchana</option>
+    </select>
+    <h3>Contact Info</h3>
+    <label for="email">Email</label>
+    <input type="text" id="email" placeholder="name@example.com"><br>
+    
+    <label for="addr">Address</label>
+    <input type="text" id="addr" value="7 Houndstooth Rd."><br>
+
+    <h3>Optional Info</h3>
+    <label>Notes</label>
+    <textarea rows="4">Anne has a BA degree in English from St. Lawrence College...</textarea><br>
+    
+    <label>Preferred Shift</label>
+    <div class="radio-group">
+        <input type="checkbox"> Regular<br>
+        <input type="checkbox" checked> Gravy Yard
+    </div><br>
+
+    <label>Active?</label>
+    <input type="checkbox" checked><br>
+
+    <div style="text-align: right;">
+        <button type="submit" style="background: #333; color: white;">Submit</button>
+        <button type="button">Cancel</button>
+    </div>
+</form>
+
+</body>
+</html>
